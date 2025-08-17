@@ -1,10 +1,11 @@
 .container {
     width: 100%;
-    height: 100%;
-       
+    display: flex;
+    flex-direction: column;
+
     .box-background {
         width: 100%;
-        height: 921px;
+        height: 840px;
         display: flex;
         flex-direction: column;
         padding: 40px 160px;
@@ -12,6 +13,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         box-sizing: border-box;
+        position: relative;
     
         .box-add {  
             display: flex;
@@ -54,39 +56,39 @@
             width: 154px;
             height: 48px;  
             margin-top: 50px;
-            border-radius: 5px;
-            cursor: pointer;
-            border: none;
-            background-color:#F47920;
-            color:#FFFFFF;
             font-size: 16px;
             font-weight: 500;
             line-height: 18.75px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color:#F47920;
+            color:#FFFFFF;
         }
 
         .search {
-            width: 1110px;
             height: 120px;
             display: flex;
             flex-direction: row;
-            justify-content: center;
             align-items: center;
+            padding-left: 20px;
+            padding-right: 20px;
             gap: 10px;
-            position: absolute;
-            bottom: -260px; /* Move metade para fora */
-            left: 50%; /* Centraliza horizontalmente */
-            transform: translateX(-50%); /* Ajusta o centro exato */
+            position: absolute; /* Permite posicionar fora dos limites do contêiner */
+            top: calc(100% - 60px);
+            left: 50%; /* Centraliza horizontalmente */ 
+            transform: translateX(-50%); /* Ajusta o centro exato */ 
             border-radius: 5px;
             box-sizing: border-box;
-            background: #0083CA;
+            background-color: #0083CA;
          
             .input-container {
                 width: 215px;
                 height: 45px;
                 display: flex;
                 flex-direction: row;
-                box-sizing: border-box;
                 border-radius: 5px;
+                box-sizing: border-box;
                 background-color:#FFFFFF;
             
                 .check-in, .check-out, .adults, .children {
@@ -129,24 +131,254 @@
             .btn-2 {
                 width: 170px;
                 height: 45px;
-                top: 879px;
-                left: 1086px;
-                border-radius: 5px; 
-                border: none;
-                background-color: #F47920;   
-                color:#FFFFFF;
                 font-size: 16px;
                 font-weight: 400;
                 line-height: 24px;
                 text-align: center;
                 text-underline-position: from-font;
                 text-decoration-skip-ink: none;
+                border: none;
+                border-radius: 5px; 
+                background-color: #F47920;   
+                color:#FFFFFF;   
             }
-        } 
-    
+        }
+        
         @media screen and (min-width: 1447px) {
             background-size: cover;
         }
-    }  
+    }
+
+    .box-room, .box-service, .box-gallery {
+        display: flow-root;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 90px;
+        box-sizing: border-box;
+          
+        .our-rooms, .our-services, .our-gallery {
+            height: 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+                  
+            .our, .rooms, .our-2, .services, .our-3, .gallery {
+                width: 226px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: Roboto;
+                font-size: 48px;
+                font-weight: 400;
+                line-height: 24px;
+                letter-spacing: 0.03em;
+                text-align: center;   
+                box-sizing: border-box;                 
+            }
+        
+            .our, .our-2, .our-3 {
+                color:#0083CA;
+                padding-left: 128px;
+            }
+
+            .rooms, .services, .gallery {
+                color: #F47920;
+                padding-right: 55px;
+            }
+        }
+
+        .description-room, .description-service, .description-gallery {   
+            margin-top: 12px;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 24px;
+            letter-spacing: 0.03em;
+            text-align: center;
+            color:#333333;
+        }
+    }
+
+    .box-hall-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 160px;
+   
+        .hall-image {
+            width: 100%;
+            margin: 40px;
+            border-radius: 2px;
+        }
+
+        .play-button {
+            position: absolute; /* Permite posicionar fora dos limites do contêiner */
+            left: 50%; /* Centraliza horizontalmente */ 
+            transform: translateX(-50%); /* Ajusta o centro exato */         
+        }
+    }
+
+    .box-nav {
+        display: flex;
+        flex-direction: row;
+        margin-top: 48px;
+        padding-left: 160px;
+        gap: 26px;
+
+        h6 {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 3%;
+            text-align: center;
+        }
+    }
+
+    .box-pictures {
+        width: 100%;
+        padding: 40px 160px;
+        column-count: 3;     /* número de colunas */
+        gap: 4px;    /* sem espaçamento entre colunas */
+        box-sizing: border-box;
+
+        .picture-item {
+            width: 100%;
+            display: block;
+            margin-top: 2px;
+            break-inside: avoid;  /* evita quebra de imagem */
+            object-fit: cover;
+        }
+    } 
+
+    .box-what-people-say {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        
+        .what-people-say {
+            height: 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+                  
+           .what, .people-say {
+            font-weight: 400;
+            font-size: 37.9px;
+            line-height: 44.41px;
+            letter-spacing: 0.03em;
+           }
+
+            .what {
+                padding-right: 12px;
+                color:#0083CA;
+            }
+    
+            .people-say {
+                color: #F47920;            
+            }           
+        }
+
+        .description-what-people-say {
+            padding-bottom: 32px;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 3%;
+            text-align: center;
+        }
+    }
+
+    .comments-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        padding: 40px 160px;
+        gap: 24px;
+        box-sizing: border-box;
+    
+        .box-comments, .comment {
+            display: flex;
+            flex-direction: column;  
+            justify-items: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .box-comments {
+            width: 35%;
+            height: 90%;
+    
+            .comment {
+               width:350px;
+               height: 158px;
+               padding-top: 10px;
+               box-shadow: 0px 2px 8px 0px #00000026;
+               position: relative;
+
+               p {
+                text-align: center;
+               }
+
+               .box-stars {
+                display: flex;
+                flex-direction: row;
+                box-sizing: border-box;
+                
+                    i {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+                .arrow-down {
+                    position: absolute;
+                    left: calc(50% - 20px);
+                    top: calc(100% - 6px);
+                }
+            }
+        }
+
+        .box-images {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            flex-direction: row;
+            margin-top: 28px;    
+            border-radius: 35px; 
+        }
+        
+        .profile {
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            margin-top: 12px;
+            gap: 8px;
+
+            .profile-name, .profile-user {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        
+            .profile-name {
+                font-weight: 700;
+                color: #000000;
+            }
+
+            .profile-user {
+                font-weight: 300;
+                color: #474A57;
+            }
+        }
+    }
 }
+
+
+
 

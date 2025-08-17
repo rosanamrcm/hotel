@@ -1,0 +1,17 @@
+.box-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 42px;
+    box-sizing: border-box;
+
+    .rooms-container {
+        height: 550px;
+        display: flex;
+        flex-direction: row;
+        padding-top: 8px;
+        padding-left: 160px;
+        margin-bottom: 10px;
+        gap: 60px;
+        box-sizing: border-box;   
+    }
+}

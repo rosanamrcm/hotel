@@ -1,0 +1,12 @@
+.box-points {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+
+    .points {
+        width: 54px;
+        height: 14px;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,123 @@
+.footer-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 24px;
+    padding: 40px 160px;
+    box-sizing: border-box;
+    background-color:#0B0D17;
+
+    .box-hotel, .box-link, .box-services, .box-reach {
+        display: flex;
+        flex-direction: column;
+        margin-top: 48px;
+    }
+
+    .box-hotel {
+        gap: 16px;
+
+        .hotel {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+
+            img {
+                width: 32px;
+                height: 31px;
+            }
+
+            h6 {
+                font-family: inter;
+                font-weight: 800;
+                font-size: 22px;
+                line-height: 24px;
+                color: #F28E13;
+            }
+        }
+
+        p {
+            font-family: Inter;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #D9DBE1;
+        }
+
+        .social-media {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+
+            .icons-media {
+                width: 32px;
+                height: 32px;
+                border-radius: 30px;
+                cursor: pointer;
+                background-color:#FFFFFF 20%;
+
+                img {
+                    width: 17px;
+                    height: 17px;
+                }
+            }                  
+        }
+
+        input {
+            width: 230px;
+            height: 40px;
+            padding-left: 8px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #FFFFFF;
+            background-color: #C4C4C440;
+        }
+    }
+    
+    .box-link, .box-services, .box-reach {
+        h5 {
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 24px;
+            letter-spacing: 3%;
+        }
+    }
+    
+    .box-link, .box-services, .reach {
+        h6 {
+            font-family: Inter;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0%;
+            cursor: pointer;
+        }
+    }
+
+    .box-link, .box-services, .box-reach, .reach {
+        h5, h6 {
+            color: #FFFFFF;
+        }
+    }
+    
+    .box-link, .box-services {
+        gap: 12px; 
+    }
+
+    .box-reach { 
+        gap: 20px;
+
+        .reach {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+
+            img {
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -26,5 +26,81 @@
             </div>
             <button class="btn-2">Booking Now</button>
         </div>
+    </div> 
+    <div class="box-room">
+        <div class="our-rooms">
+            <h3 class="our">Our</h3>
+            <h3 class="rooms">Rooms</h3>
+        </div>
+        <p class="description-room">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor viverra <br>parturient diam sagittis nec cras.</p>
+    </div> 
+    <app-cards-room [cardList]="cardList"></app-cards-room>
+    <app-button-points></app-button-points>
+    <span class="box-hall-image">
+        <img src="images/hall.svg" class="hall-image">
+        <img src="icons/play-button.svg" alt="play" class="play-button">
+    </span>
+    <div class="box-service">
+        <div class="our-services">
+            <h3 class="our-2">Our</h3>
+            <h3 class="services">Services</h3>
+        </div>
+        <p class="description-service">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor viverra <br>parturient diam sagittis nec cras.</p>
     </div>
+    <app-services></app-services>
+    <div class="box-gallery">
+        <div class="our-gallery">
+            <h3 class="our-3">Our</h3>
+            <h3 class="gallery">Gallery</h3>
+        </div>
+        <p class="description-gallery">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor viverra <br>parturient diam sagittis nec cras.</p>
+    </div>
+    <div class="box-nav">
+        <h6>All</h6>
+        <h6>Room</h6>
+        <h6>Lobby</h6>
+        <h6>Reception</h6>
+        <h6>Dining </h6>
+        <h6>Pool</h6>
+        <h6>Spa</h6>
+    </div>
+    <section class="box-pictures">
+        <img src="images/entrance-hall.svg" class="picture-item">
+        <img src="images/pool-2.svg" class="picture-item">
+        <img src="images/breakfast.svg" class="picture-item">
+        <img src="images/oil.svg" class="picture-item">
+        <img src="images/family-room-1.svg" class="picture-item">
+        <img src="images/bedroom.svg" class="picture-item">
+        <img src="images/car.svg" class="picture-item">        
+    </section>
+    <div class="box-what-people-say">
+        <div class="what-people-say">
+            <h3 class="what">What</h3>
+            <h3 class="people-say">People Say</h3>
+        </div>      
+        <p class="description-what-people-say">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor viverra <br>parturient diam sagittis nec cras.</p>
+    </div>
+    <div class="comments-container">
+        <div class="box-comments" *ngFor="let item of cardComment">
+            <div class="comment">
+                <p>{{item.comment}}</p>
+                <div class="box-stars" *ngFor="let icon of cardComment">
+                    <i class="icon-star" [ngStyle]="{ 'background-image': 'url(' + icon.stars[0].star + ')' }"></i>
+                    <i class="icon-star" [ngStyle]="{ 'background-image': 'url(' + icon.stars[0].star + ')' }"></i>
+                    <i class="icon-star" [ngStyle]="{ 'background-image': 'url(' + icon.stars[0].star + ')' }"></i>
+                    <i class="icon-star" [ngStyle]="{ 'background-image': 'url(' + icon.stars[0].star + ')' }"></i>
+                    <i class="icon-star" [ngStyle]="{ 'background-image': 'url(' + icon.stars[1].star + ')' }"></i>
+                </div>
+                <img src="icons/arrow.svg" alt="arrow" class="arrow-down">
+            </div> 
+            <div class="box-images" [ngStyle]="{ 'background-image': 'url(' + item.picture + ')' }">      
+            </div>
+            <div class="profile">
+                <h6 class="profile-name">{{ item.name }}</h6>
+                <h6 class="profile-user">{{ item.user }}</h6> 
+            </div>    
+        </div>
+    </div>
+    <app-button-points></app-button-points>
+    <app-footer></app-footer>
 </div>
