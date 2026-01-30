@@ -1,36 +1,35 @@
 .container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
-    .box-background-rooms {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 40px 160px;
-        background-image: url('./../../../../public/images/sky.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        box-sizing: border-box;
-        position: relative;
+/* HERO ROOMS */
+.rooms-hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 160px;
+  background-color: white;
 
-        .our-rooms{
-            height: 100px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            box-sizing: border-box;
+  background-image: url('/images/sky.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-            img{
-                width: 179;
-                height: 24;
-                angle: 0 deg;
-                opacity: 1;
-                top: 134px;
-                left: 631px;
+  box-sizing: border-box;
+  position: relative;
+}
 
-            }
-        }
-    }
+/* TITLE */
+.rooms-title {
+  margin-top: clamp(220px, 20vh, 240px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rooms-title img {
+  width: clamp(140px, 20vw, 180px);
+  height: auto;
 }

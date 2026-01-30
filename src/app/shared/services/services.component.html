@@ -1,62 +1,17 @@
-<div class="service-container">
-    <div class="services-1">
-        <div class="box-info">
-            <span class="elipse">
-                <img src="icons/restaurant.svg">
-            </span>
-            <h6>Restaurant</h6>
-            <p>Lorem ipsum dolor sit amet,<br> consectetur</p>
-        </div>
-        <div class="box-info">
-            <span class="elipse">
-                <img src="icons/transport.svg">
-            </span>
-            <h6>Transport Facility</h6>
-            <p>Lorem ipsum dolor sit amet,<br> consectetur</p>
-        </div>
-        <div class="box-info">
-            <div class="elipse">
-                <img src="icons/spa.svg">
-            </div>
-            <h6>Spa & Sallon</h6>
-            <p>Lorem ipsum dolor sit amet,<br> consectetur</p>
-        </div>
-        <div class="box-info">
-            <div class="elipse">
-                <img src="icons/wifi.svg">
-            </div>
-            <h6>Free Wifi</h6>
-            <p>Lorem ipsum dolor sit amet,<br> consectetur</p>
-        </div>
-    </div>
-    <div class="services-2">
-        <div class="box-info">
-            <div class="elipse">
-                <img src="icons/swimming-pool.svg">
-            </div>
-            <h6>Swimming Pool</h6>
-            <p>Lorem ipsum dolor sit amet,<br> consectetur</p>
-        </div>
-        <div class="box-info">
-            <div class="elipse">
-                <img src="icons/mini-bar.svg">
-            </div>
-            <h6>Mini Bar</h6>
-            <p>Lorem ipsum dolor sit amet,<br> consectetur</p>
-        </div>
-        <div class="box-info">
-            <div class="elipse">
-                <img src="icons/conference-room.svg">
-            </div>
-            <h6>Conference Room</h6>
-            <p>Lorem ipsum dolor sit amet,<br> consectetur</p>
-        </div>
-        <div class="box-info">
-            <div class="elipse">
-                <img src="icons/game-room.svg">
-            </div>
-            <h6>Game Room</h6>
-            <p>Lorem ipsum dolor sit amet,<br> consectetur</p>
-        </div>
-    </div>
-</div>
+<section class="services">
+  @for (service of services; track service.title) {
+    <article class="service-card">
+      <div class="service-card__icon">
+        <img [src]="service.icon" [alt]="service.title" />
+      </div>
+
+      <h6 class="service-card__title">{{ service.title }}</h6>
+
+      <p class="service-card__description">
+        {{ service.description }}
+      </p>
+    </article>
+  }
+</section>
+
+

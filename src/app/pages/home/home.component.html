@@ -1,106 +1,150 @@
 <div class="container">
-    <div class="box-background">
-        <app-header></app-header>
-        <div class="box-add">
-            <h3 class="hotel">HOTEL</h3>
-            <h3 class="discount">Up to 60% OFF</h3>
-            <h4 class="booking">On Hotel Booking Online</h4>
-        </div>
-        <button class="btn">Booking Now</button>
-        <div class="search">
-            <div class="input-container">
-                <input class="check-in">
-                <i><img src="icons/calendar.svg"class="icon"></i>
-            </div>
-            <div class="input-container">
-                <input class="check-out">
-                <i><img src="icons/calendar.svg"class="icon"></i>
-            </div>
-            <div class="input-container">
-                <input class="adults">
-                <i><img src="icons/adult.svg"class="icon"></i>
-            </div>
-            <div class="input-container">
-                <input class="children">
-                <i><img src="icons/child.svg"class="icon-child"></i>
-            </div>
-            <button class="btn-2">Booking Now</button>
-        </div>
-    </div> 
-    <div class="box-room">
-        <div class="our-rooms">
-            <h3 class="our">Our</h3>
-            <h3 class="rooms">Rooms</h3>
-        </div>
-        <p class="description-room">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor viverra <br>parturient diam sagittis nec cras.</p>
-    </div> 
-    <app-cards-room [cardList]="cardList"></app-cards-room>
-    <app-button-points></app-button-points>
-    <span class="box-hall-image">
-        <img src="images/hall.svg" class="hall-image">
-        <img src="icons/play-button.svg" alt="play" class="play-button">
-    </span>
-    <div class="box-service">
-        <div class="our-services">
-            <h3 class="our-2">Our</h3>
-            <h3 class="services">Services</h3>
-        </div>
-        <p class="description-service">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor viverra <br>parturient diam sagittis nec cras.</p>
+
+  <!-- HERO -->
+   
+  <section class="hero">
+    <app-header></app-header>
+
+    <div class="hero-content">
+      <h3 class="hotel">HOTEL</h3>
+      <h3 class="discount">Up to 60% OFF</h3>
+      <h4 class="booking">On Hotel Booking Online</h4>
+      <button class="btn-primary">Booking Now</button>
     </div>
+
+    <form class="search">
+      <div class="input-group">
+        <input placeholder="Check-in">
+        <img src="/icons/calendar.svg" alt="">
+      </div>
+
+      <div class="input-group">
+        <input placeholder="Check-out">
+        <img src="/icons/calendar.svg" alt="">
+      </div>
+
+      <div class="input-group">
+        <input placeholder="Adults">
+        <img src="/icons/adult.svg" alt="">
+      </div>
+
+      <div class="input-group">
+        <input placeholder="Children">
+        <img src="/icons/child.svg" alt="">
+      </div>
+
+      <button class="btn-secondary">Booking Now</button>
+    </form>
+  </section>
+
+  <!-- ROOMS -->
+
+  <section class="section">
+    <header class="section__title">
+      <h3 class="title--blue">Our</h3>
+      <h3 class="title--orange">Rooms</h3>
+    </header>
+    <p class="section-description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor viverra parturient diam sagittis nec cras.
+    </p>
+  </section>
+
+  <app-cards-room [cardList]="cardList"></app-cards-room>
+
+  <app-button-points></app-button-points>
+
+  <section class="hall">
+    <img src="images/hall.svg" alt="Hall do hotel" class="hall__image" />
+    <img src="icons/play-button.svg" alt="Play video" class="hall__play" />
+  </section>
+
+  <!-- SERVICES -->
+
+  <section class="section section--center">
+    <header class="section__title">
+      <h3 class="title--blue">Our</h3>
+      <h3 class="title--orange">Services</h3>
+    </header>
+
+    <p class="section__description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Tempor viverra parturient diam sagittis nec cras.
+    </p>
+
     <app-services></app-services>
-    <div class="box-gallery">
-        <div class="our-gallery">
-            <h3 class="our-3">Our</h3>
-            <h3 class="gallery">Gallery</h3>
+  </section>
+
+  <!-- GALLERY -->
+  
+  <section class="section">
+    <header class="section__title">
+      <h3 class="title--blue">Our</h3>
+      <h3 class="title--orange">Gallery</h3>
+    </header>
+    <nav class="nav-gallery">
+      <h4 class="item-gallery--active">ALL</h4>
+      <h4 class="item-gallery">Room</h4>
+      <h4 class="item-gallery">Lobby</h4>
+      <h4 class="item-gallery">Reception</h4>
+      <h4 class="item-gallery">Dining</h4>
+      <h4 class="item-gallery">Pool</h4>
+      <h4 class="item-gallery">Spa</h4>
+    </nav>
+    <div class="gallery">
+      <img class="img img--1" src="/images/entrance-hall.svg">
+      <img class="img img--2" src="/images/breakfast.svg">
+      <img class="img img--3" src="/images/oil.svg">
+      <img class="img img--4" src="/images/bedroom.svg">
+      <img class="img img--5" src="/images/pool-2.svg">
+      <img class="img img--6" src="/images/car.svg">
+    </div>
+  </section>
+
+   <!-- WHAT PEOPLE SAY -->
+
+  <section class="section section--center">
+    <header class="section__title">
+      <h3 class="title--blue">What</h3>
+      <h3 class="title--orange">People Say</h3>
+    </header>
+
+    <p class="section__description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Tempor viverra parturient diam sagittis nec cras.
+    </p>
+  </section>
+
+  <section class="comments">
+    <article class="comment-card" *ngFor="let item of cardComment">
+      <div class="comment-card__box">
+        <p class="comment-card__text">{{ item.comment }}</p>
+
+        <div class="comment-card__stars">
+          <i
+            class="star"
+            *ngFor="let star of item.stars"
+            [ngStyle]="{ 'background-image': 'url(' + star.star + ')' }"
+          ></i>
         </div>
-        <p class="description-gallery">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor viverra <br>parturient diam sagittis nec cras.</p>
-    </div>
-    <div class="box-nav">
-        <h6>All</h6>
-        <h6>Room</h6>
-        <h6>Lobby</h6>
-        <h6>Reception</h6>
-        <h6>Dining </h6>
-        <h6>Pool</h6>
-        <h6>Spa</h6>
-    </div>
-    <section class="box-pictures">
-        <img src="images/entrance-hall.svg" class="picture-item">
-        <img src="images/pool-2.svg" class="picture-item">
-        <img src="images/breakfast.svg" class="picture-item">
-        <img src="images/oil.svg" class="picture-item">
-        <img src="images/family-room-1.svg" class="picture-item">
-        <img src="images/bedroom.svg" class="picture-item">
-        <img src="images/car.svg" class="picture-item">        
-    </section>
-    <div class="box-what-people-say">
-        <div class="what-people-say">
-            <h3 class="what">What</h3>
-            <h3 class="people-say">People Say</h3>
-        </div>      
-        <p class="description-what-people-say">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor viverra <br>parturient diam sagittis nec cras.</p>
-    </div>
-    <div class="comments-container">
-        <div class="box-comments" *ngFor="let item of cardComment">
-            <div class="comment">
-                <p>{{item.comment}}</p>
-                <div class="box-stars" *ngFor="let icon of cardComment">
-                    <i class="icon-star" [ngStyle]="{ 'background-image': 'url(' + icon.stars[0].star + ')' }"></i>
-                    <i class="icon-star" [ngStyle]="{ 'background-image': 'url(' + icon.stars[0].star + ')' }"></i>
-                    <i class="icon-star" [ngStyle]="{ 'background-image': 'url(' + icon.stars[0].star + ')' }"></i>
-                    <i class="icon-star" [ngStyle]="{ 'background-image': 'url(' + icon.stars[0].star + ')' }"></i>
-                    <i class="icon-star" [ngStyle]="{ 'background-image': 'url(' + icon.stars[1].star + ')' }"></i>
-                </div>
-                <img src="icons/arrow.svg" alt="arrow" class="arrow-down">
-            </div> 
-            <div class="box-images" [ngStyle]="{ 'background-image': 'url(' + item.picture + ')' }">      
-            </div>
-            <div class="profile">
-                <h6 class="profile-name">{{ item.name }}</h6>
-                <h6 class="profile-user">{{ item.user }}</h6> 
-            </div>    
-        </div>
-    </div>
-    <app-button-points></app-button-points>
-    <app-footer></app-footer>
+
+        <img src="icons/arrow.svg" alt="arrow" class="comment-card__arrow" />
+      </div>
+
+      <div
+        class="comment-card__avatar"
+        [ngStyle]="{ 'background-image': 'url(' + item.picture + ')' }"
+      ></div>
+
+      <div class="comment-card__profile">
+        <h6 class="profile__name">{{ item.name }}</h6>
+        <h6 class="profile__user">{{ item.user }}</h6>
+      </div>
+    </article>
+  </section>
+
+  <app-button-points></app-button-points>> 
+
+  <app-footer></app-footer>
+
 </div>
+
