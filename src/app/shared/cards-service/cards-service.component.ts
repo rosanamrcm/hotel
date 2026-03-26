@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-services',
+  selector: 'app-cards-service',
   standalone: true,
   imports: [],
-  templateUrl: './services.component.html',
-  styleUrl: './services.component.scss'
+  templateUrl: './cards-service.component.html',
+  styleUrl: './cards-service.component.scss'
 })
-export class ServicesComponent {
+export class CardsServiceComponent {
 
   services = [
     {
@@ -51,7 +51,5 @@ export class ServicesComponent {
       description: 'Lorem ipsum dolor sit amet, consectetur'
     }
   ];
+
 }
-
-
-

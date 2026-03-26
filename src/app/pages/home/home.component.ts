@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../shared/header/header.component';
 import { CardsRoomComponent } from '../../shared/cards-room/cards-room.component';
-import { ServicesComponent } from '../../shared/services/services.component';
+import { CardsServiceComponent } from '../../shared/cards-service/cards-service.component';
 import { ButtonPointsComponent } from '../../shared/button-points/button-points.component';
 import { FooterComponent } from '../../shared/footer/footer.component';
 
@@ -11,7 +11,7 @@ import { FooterComponent } from '../../shared/footer/footer.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, CardsRoomComponent, ServicesComponent, ButtonPointsComponent, FooterComponent, CommonModule, ],
+  imports: [HeaderComponent, CardsRoomComponent, CardsServiceComponent, ButtonPointsComponent, FooterComponent, CommonModule, ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

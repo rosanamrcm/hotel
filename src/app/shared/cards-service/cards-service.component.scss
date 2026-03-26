@@ -1,13 +1,14 @@
 .services {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 44px;
   padding: 0 10vw;
   box-sizing: border-box;
 }
 
 .service-card {
+  height: auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -15,12 +16,11 @@
   border: 1px solid #00000026;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  background: #fff;
 }
 
 .service-card__icon {
-  width: 45px;
-  height: 45px;
+  width: 44px;
+  height: 44px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,8 +47,14 @@
 }
 
 /* ===== RESPONSIVO ===== */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .services {
-    padding: 0 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services {
+    grid-template-columns: 1fr;
   }
 }

@@ -13,11 +13,15 @@ export class HeaderComponent {
   constructor (private router: Router){ }
 
   home(): void {
-    this.router.navigate(['/home']);
+    this.router.navigate(['']);
   }
 
   rooms() :void {
     this.router.navigate(['/rooms']);
+  }
+
+  services(): void {
+    this.router.navigate(['/services']);
   }
 
 }

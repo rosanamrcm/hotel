@@ -6,11 +6,13 @@
 
 /* HERO ROOMS */
 .rooms-hero {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   flex-direction: column;
-  padding: 40px 160px;
+  padding-inline: clamp(16px, 6vw, 160px);
+  padding-block: clamp(20px, 5vh, 40px);
   background-color: white;
+  
 
   background-image: url('/images/sky.svg');
   background-size: cover;
@@ -23,13 +25,54 @@
 
 /* TITLE */
 .rooms-title {
-  margin-top: clamp(220px, 20vh, 240px);
+  margin-top: clamp(110px, 20vh, 240px);
+  transform: translateY(-60px); /* 👈 sobe o bloco */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: clamp(8px, 2vw, 20px);
+  text-align: center;
 }
 
 .rooms-title img {
-  width: clamp(140px, 20vw, 180px);
+  width: clamp(100px, 18vw, 180px); 
   height: auto;
 }
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: clamp(12px, 2vw, 16px);
+  gap: 8px;              /* controla o espaço entre spans */
+  align-items: center;
+  justify-content: center; /* centraliza abaixo da imagem */
+  color: #fff;
+  cursor: pointer;
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 0 10vw;
+  box-sizing: border-box;
+}
+
+.icons img {
+  width: clamp(20px, 4vw, 28px);
+}
+
+@media (max-width: 768px) {
+  .icons {
+    justify-content: center; /* 👈 melhor no mobile */
+  }
+
+  .rooms-title {
+    transform: translateY(-30px);
+  }
+}
+
+
+

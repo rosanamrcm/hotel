@@ -4,7 +4,25 @@
 
     <div class="rooms-title">
       <img src="/images/our-room.svg" alt="Our Rooms">
+      <div class="menu">
+        <span routerLink="/">Home</span>
+        <span>/</span>
+        <span routerLink="/rooms">Rooms & Suites</span>
+      </div>
     </div>
   </section>
+
+  <div class="content">
+    <section class="icons">
+      <img src="/icons/grid.svg" alt="Grid">
+      <img src="/icons/list.svg" alt="List">   
+    </section>
+    <app-cards-room [cardList]="cardList"></app-cards-room>
+  </div>
+  
+   <app-button-points></app-button-points>
+
+   <app-footer></app-footer>
+   
 </div>
 

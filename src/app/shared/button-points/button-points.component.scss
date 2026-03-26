@@ -2,11 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 24px;
+    margin: 40px 0;
+}
 
-    .points {
-        width: 54px;
-        height: 14px;
-        cursor: pointer;
-    }
+.points {
+    width: clamp(40px, 8vw, 54px);
+    height: 14px;
+    cursor: pointer;
 }

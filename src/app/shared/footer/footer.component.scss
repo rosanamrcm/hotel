@@ -1,123 +1,150 @@
 .footer-container {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap; /* 👈 permite quebrar linha */
     justify-content: space-between;
-    margin-top: 24px;
-    padding: 40px 160px;
+    gap: 40px;
+  
+    padding: clamp(20px, 5vw, 40px) clamp(16px, 8vw, 160px);
     box-sizing: border-box;
-    background-color:#0B0D17;
-
-    .box-hotel, .box-link, .box-services, .box-reach {
-        display: flex;
-        flex-direction: column;
-        margin-top: 48px;
-    }
-
-    .box-hotel {
-        gap: 16px;
-
-        .hotel {
-            display: flex;
-            flex-direction: row;
-            gap: 12px;
-
-            img {
-                width: 32px;
-                height: 31px;
-            }
-
-            h6 {
-                font-family: inter;
-                font-weight: 800;
-                font-size: 22px;
-                line-height: 24px;
-                color: #F28E13;
-            }
-        }
-
-        p {
-            font-family: Inter;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
-            color: #D9DBE1;
-        }
-
-        .social-media {
-            display: flex;
-            flex-direction: row;
-            gap: 8px;
-
-            .icons-media {
-                width: 32px;
-                height: 32px;
-                border-radius: 30px;
-                cursor: pointer;
-                background-color:#FFFFFF 20%;
-
-                img {
-                    width: 17px;
-                    height: 17px;
-                }
-            }                  
-        }
-
-        input {
-            width: 230px;
-            height: 40px;
-            padding-left: 8px;
-            border: none;
-            border-radius: 5px;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
-            color: #FFFFFF;
-            background-color: #C4C4C440;
-        }
-    }
-    
-    .box-link, .box-services, .box-reach {
-        h5 {
-            font-weight: 700;
-            font-size: 22px;
-            line-height: 24px;
-            letter-spacing: 3%;
-        }
-    }
-    
-    .box-link, .box-services, .reach {
-        h6 {
-            font-family: Inter;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
-            letter-spacing: 0%;
-            cursor: pointer;
-        }
-    }
-
-    .box-link, .box-services, .box-reach, .reach {
-        h5, h6 {
-            color: #FFFFFF;
-        }
-    }
-    
-    .box-link, .box-services {
-        gap: 12px; 
-    }
-
-    .box-reach { 
-        gap: 20px;
-
-        .reach {
-            display: flex;
-            flex-direction: row;
-            gap: 8px;
-
-            img {
-                cursor: pointer;
-            }
-        }
-    }
+    background-color: #0B0D17;
 }
+
+.box-hotel,
+.box-link,
+.box-services,
+.box-reach {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    min-width: 200px; /* 👈 evita esmagar */
+    flex: 1;
+}
+
+.box-hotel {
+    gap: 16px;
+}
+.hotel {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.hotel img {
+    width: clamp(24px, 4vw, 32px);
+    height: auto;
+}
+
+.hotel h6 {
+    font-family: inter;
+    font-weight: 800;
+    font-size: clamp(18px, 2.5vw, 22px);
+    line-height: 24px;
+    color: #F28E13;
+}
+
+p {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: clamp(14px, 2vw, 16px);
+    line-height: 1.5;
+    color: #D9DBE1;
+}
+
+.social-media {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.icons-media {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color:#FFFFFF 20%;
+}
+
+.icons-media img {
+    width: 16px;
+    height: 16px;
+}
+                
+input {
+    width: 100%;
+    max-width: 250px;
+    height: 40px;
+    padding-left: 8px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background-color: #C4C4C440;
+}
+
+.box-link h5, 
+.box-services h5,
+.box-reach h5 {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 24px;
+    letter-spacing: 3%;
+    color: #FFFFFF;
+}
+
+.box-link h6,
+.box-services h6,
+.reach h6 {
+    font-size: clamp(14px, 2vw, 16px);
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.box-reach { 
+    gap: 20px;
+}
+
+.reach {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+img {
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .footer-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .box-hotel,
+  .box-link,
+  .box-services,
+  .box-reach {
+    width: 100%;
+  }
+
+  .social-media {
+    flex-wrap: wrap;
+  }
+}
+

@@ -1,0 +1,136 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HERO SERVICES */
+.services-hero {
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-inline: clamp(16px, 6vw, 160px);
+  padding-block: clamp(20px, 5vh, 40px);
+  background-color: white;
+  
+
+  background-image: url('/images/sky.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* TITLE */
+.services-title {
+  margin-top: clamp(110px, 20vh, 240px);
+  transform: translateY(-60px); /* 👈 sobe o bloco */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(8px, 2vw, 20px);
+  text-align: center;
+}
+
+.services-title img {
+  width: clamp(100px, 18vw, 180px); 
+  height: auto;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: clamp(12px, 2vw, 16px);
+  gap: 8px;              /* controla o espaço entre spans */
+  align-items: center;
+  justify-content: center; /* centraliza abaixo da imagem */
+  color: #fff;
+  cursor: pointer;
+}
+
+.services-section {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 8vw, 80px);
+  padding: clamp(20px, 5vw, 80px) 10vw;
+}
+
+/* ROW */
+.service-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(20px, 5vw, 60px);
+}
+
+/* INVERTER LADO */
+.service-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* IMAGEM */
+.service-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* TEXTO */
+.service-content {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.service-content h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  color: #0083CA;
+  font-weight: 700;
+}
+
+.service-content p {
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.6;
+  color: #555;
+}
+
+/* QUOTE */
+.quote {
+  font-size: 32px;
+  color: #000;
+  line-height: 1;
+}
+
+app-cards-service {
+  display: block;
+  margin-bottom: clamp(80px, 10vw, 120px);
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+  .services-title {
+    transform: translateY(-30px);
+  }
+}
+
+@media (max-width: 768px) {
+  .service-row,
+  .service-row.reverse {
+    flex-direction: column;
+  }
+
+  .service-content,
+  .service-image img {
+    max-width: 100%;
+  }
+
+  .service-content {
+    text-align: left;
+  }
+}
