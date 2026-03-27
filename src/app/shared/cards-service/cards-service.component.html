@@ -1,15 +1,15 @@
 <section class="services">
-  @for (service of services; track service.title) {
-    <article class="service-card">
-      <div class="service-card__icon">
-        <img [src]="service.icon" [alt]="service.title" />
-      </div>
+  <article class="service-card" *ngFor="let service of services; trackBy: trackByTitle">
+    
+    <div class="service-card__icon">
+      <img [src]="service.icon" [alt]="service.title" />
+    </div>
 
-      <h6 class="service-card__title">{{ service.title }}</h6>
+    <h6 class="service-card__title">{{ service.title }}</h6>
 
-      <p class="service-card__description">
-        {{ service.description }}
-      </p>
-    </article>
-  }
+    <p class="service-card__description">
+      {{ service.description }}
+    </p>
+
+  </article>
 </section>

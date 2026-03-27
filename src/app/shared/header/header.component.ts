@@ -24,4 +24,12 @@ export class HeaderComponent {
     this.router.navigate(['/services']);
   }
 
+  aboutUs(): void {
+    this.router.navigate(['/about']);
+  }
+
+   booking(): void {
+    this.router.navigate(['/booking']);
+  }
+
 }

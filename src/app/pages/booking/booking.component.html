@@ -1,0 +1,60 @@
+<div class="container">
+    <section class="booking-hero">
+        <app-header></app-header>
+
+        <div class="booking-title">
+        <img src="/images/booking.svg" alt="Booking">
+            <div class="menu">
+                <span routerLink="/">Home</span>
+                <span>/</span>
+                <span routerLink="/booking">Booking</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-content">
+        <div class="booking-card">
+
+            <!-- IMAGEM -->
+            <div 
+            class="booking-card__image"
+            style="background-image: url('images/family-room-1.svg')">
+            </div>
+
+            <!-- CONTEÚDO -->
+            <div class="booking-card__info">
+
+                <div class="booking-card__header">
+                    <h3>Family Room</h3>
+                    <span class="price">$799</span>
+                </div>
+
+                <!-- TABELA -->
+                <table class="booking-table">
+                    <tr>
+                        <th>Check in time</th>
+                        <th>Check in time</th>
+                        <th>Guest</th>
+                    </tr>
+
+                    <tr>
+                        <td>12:30 pm</td>
+                        <td>12:30 pm</td>
+                        <td rowspan="2" class="guest-cell">4</td>
+                    </tr>
+
+                    <tr>
+                        <td>09/03/2021</td>
+                        <td>09/03/2021</td>
+                    </tr>
+                </table>
+                <!-- BOTÃO -->
+                <div class="booking-card__footer">
+                    <button>Confirm</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <app-footer></app-footer>  
+</div>

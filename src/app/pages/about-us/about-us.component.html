@@ -1,0 +1,83 @@
+<div class="container">
+    <section class="about-us-hero">
+        <app-header></app-header>
+
+        <div class="about-us-title">
+        <img src="/images/about-us.svg" alt="About Us">
+            <div class="menu">
+                <span routerLink="/">Home</span>
+                <span>/</span>
+                <span routerLink="/about-us">About Us</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-us-section">
+        <!-- BLOCO 1 -->
+        <div class="about-us-row">
+            <div class="about-us-image">
+                <img src="images/hotel-1.svg" alt="About Us">
+            </div>
+
+            <div class="about-us-content">
+                <h2>About Us</h2>
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit ac lectus integer ac morbi egestas nunc.
+                </p>
+                <span class="quote">"</span>
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit ac lectus integer ac morbi egestas nunc.
+                </p>
+            </div>
+        </div>
+
+        <!-- BLOCO 2 (invertido) -->
+        <div class="about-us-row reverse">
+            <div class="about-us-image">
+                <img src="images/hotel-2.svg" alt="Hotel">
+            </div>
+
+            <div class="about-us-content">
+                <h2>Hotel</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit ac lectus integer ac morbi egestas nunc.
+                </p>
+                <span class="quote">"</span>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit ac lectus integer ac morbi egestas nunc.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team">
+        <div class="team-container">       
+            <article class="team-card" *ngFor="let member of team">
+            
+                <div 
+                    class="team-card__image"
+                    [ngStyle]="{ 'background-image': 'url(' + member.image + ')' }">
+                </div>
+
+                <div class="team-card__content">
+                    <h5 class="team-card__name">{{ member.name }}</h5>
+                    <span class="team-card__role">{{ member.role }}</span>
+
+                    <div class="team-card__footer">
+                        <span class="team-card__phone">{{ member.phone }}</span>
+
+                        <div class="team-card__social">
+                            <img src="icons/instagram.svg" alt="Instagram">
+                            <img src="icons/facebook.svg" alt="Facebook">
+                            <img src="icons/x.svg" alt="X">
+                     
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <app-footer></app-footer>  
+
+</div>

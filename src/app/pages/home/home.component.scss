@@ -11,6 +11,7 @@
 
 /* HERO */
 
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -23,8 +24,16 @@
 }
 
 .hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   max-width: 600px;
-  margin-top: clamp(100px, 18vh, 240px);
+  margin-top: clamp(160px, 18vh, 240px);
+  padding-left: 80px;
+}
+
+.hero-text {
+  gap: 24px;
 }
 
 .hotel {
@@ -60,6 +69,9 @@
   cursor: pointer;
 }
 
+.btn-primary {
+  width: 180px;
+}
 /* SEARCH */
 
 .search {
@@ -168,7 +180,7 @@
 /* ====== HALL ====== */
 
 .hall {
-  padding: var(--space-section) 10vw;
+  //padding: var(--space-section) 10vw;
   position: relative;
 }
 

@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cards-service',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './cards-service.component.html',
   styleUrl: './cards-service.component.scss'
 })
 export class CardsServiceComponent {
+
+  trackByTitle(index: number, item: any): string {
+  return item.title;
+}
 
   services = [
     {
