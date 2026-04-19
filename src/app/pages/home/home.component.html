@@ -11,31 +11,90 @@
         <h3 class="discount">Up to 60% OFF</h3>
         <h4 class="booking">On Hotel Booking Online</h4>
       </div>
-      <button class="btn-primary">Booking Now</button>
     </div>
 
-    <form class="search">
-      <div class="input-group">
-        <input placeholder="Check-in">
-        <img src="/icons/calendar.svg" alt="">
+    <form class="search" id="booking-form">
+      <!-- CHECK-IN-->
+      <div class="field">
+        <div class="input-group input-date">
+          <input
+            type="date"
+            [(ngModel)]="checkIn"
+            (change)="validateCheckIn()"
+            name="checkIn"
+            [class.error]="errors.checkIn"
+          >
+          <img src="/icons/calendar.svg" alt="calendar">
+        </div>
+
+        <span class="error-text" *ngIf="errors.checkIn">
+          {{ errors.checkIn }}
+          </span>
       </div>
 
-      <div class="input-group">
-        <input placeholder="Check-out">
-        <img src="/icons/calendar.svg" alt="">
+      <!--CHECK-OUT-->
+      <div class="field">
+        <div class="input-group input-date">
+          <input
+            type="date"
+            [(ngModel)]="checkOut"
+            (change)="validateCheckOut()"
+            name="checkOut"
+            [class.error]="errors.checkOut"
+          >
+          <img src="/icons/calendar.svg" alt="calendar">
+        </div>
+
+        <div class="error">
+          <span class="error-text" *ngIf="errors.checkOut">
+          {{ errors.checkOut}}
+          </span>
+        </div>
       </div>
 
-      <div class="input-group">
-        <input placeholder="Adults">
-        <img src="/icons/adult.svg" alt="">
+      <!--ADULTS-->
+      <div class="field">
+        <div class="input-group">
+          <input
+            type="number"
+            min="1"
+            placeholder="Adults"
+            [(ngModel)]="adults"
+            name="adults"
+            (input)="validateAdults()"
+            (change)="validateAdults()"
+            [class.error]="errors.adults"
+          >
+          <img src="/icons/adult.svg" alt="">
+        </div>
       </div>
 
-      <div class="input-group">
-        <input placeholder="Children">
-        <img src="/icons/child.svg" alt="">
+      <!--CHILDREN-->
+      <div class="field">
+        <div class="input-group">
+          <input
+            type="number"
+            min="0"
+            placeholder="Children"
+            [(ngModel)]="children"
+            name="children"
+            (input)="validateChildren()"
+            (change)="validateChildren()"
+            [class.error]="errors.children"
+          >
+          <img src="/icons/child.svg" alt="">
+        </div>
       </div>
 
-      <button class="btn-secondary">Booking Now</button>
+      <!--BUTTON-->
+      <button 
+        class="btn-primary"
+        type="button"
+        (click)="bookNow()" 
+        [disabled]="!isFormValid()"
+        >
+        Booking Now
+      </button>
     </form>
   </section>
 
@@ -50,7 +109,7 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor viverra parturient diam sagittis nec cras.
     </p>
     
-    <app-cards-room [cardList]="cardList"></app-cards-room>
+    <app-cards-room [cardList]="cardList" (bookingClick)="scrollToBooking()"></app-cards-room>>
 
   </section>
 

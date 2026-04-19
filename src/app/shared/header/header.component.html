@@ -5,7 +5,24 @@
         <a (click)="services()">Services</a>
         <a (click)="aboutUs()">About Us</a>
         <a (click)="booking()">Booking</a>
+       <!-- NÃO LOGADO -->
+        <a *ngIf="!userName" (click)="loginModal.open()">Login</a>
+
+        <!-- LOGADO -->
+        <div class="user-menu" *ngIf="userName">
+            <a (click)="toggleMenu()">
+            Olá, {{ userName }}!
+            </a>
+
+            <div class="dropdown" *ngIf="menuOpen">
+            <a (click)="myBookings()">My Bookings</a>
+            <a (click)="logout()">Logout</a>
+            </div>
+  </div>
     </div>
+
+    <app-login-modal #loginModal></app-login-modal>
+
     <div class="midias">
         <a><img src="icons/instagram.svg" alt="Instagram"></a>
         <a><img src="icons/facebook.svg" alt="Youtube"></a>

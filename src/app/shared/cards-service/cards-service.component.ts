@@ -12,7 +12,7 @@ export class CardsServiceComponent {
 
   trackByTitle(index: number, item: any): string {
   return item.title;
-}
+  }
 
   services = [
     {
@@ -56,5 +56,4 @@ export class CardsServiceComponent {
       description: 'Lorem ipsum dolor sit amet, consectetur'
     }
   ];
-
 }

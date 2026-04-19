@@ -25,33 +25,49 @@
             <div class="booking-card__info">
 
                 <div class="booking-card__header">
-                    <h3>Family Room</h3>
-                    <span class="price">$799</span>
+                    <h3>Room</h3>
                 </div>
 
-                <!-- TABELA -->
-                <table class="booking-table">
-                    <tr>
-                        <th>Check in time</th>
-                        <th>Check in time</th>
-                        <th>Guest</th>
-                    </tr>
+                <div *ngIf="booking; else noBooking">
 
-                    <tr>
-                        <td>12:30 pm</td>
-                        <td>12:30 pm</td>
-                        <td rowspan="2" class="guest-cell">4</td>
-                    </tr>
+                    <!-- INFO -->
+                    <div class="booking-info">
+                        <p>Check-in: {{ booking.checkIn | date }}</p>
+                        <p>Check-out: {{ booking.checkOut | date }}</p>
+                        <p>Adults: {{ booking.adults }}</p>
+                        <p>Children: {{ booking.children }}</p>
+                    </div>
 
-                    <tr>
-                        <td>09/03/2021</td>
-                        <td>09/03/2021</td>
-                    </tr>
-                </table>
-                <!-- BOTÃO -->
-                <div class="booking-card__footer">
-                    <button>Confirm</button>
+                    <!-- ROOMS -->
+                    <div class="rooms">
+                        <div 
+                        class="room-card"
+                        *ngFor="let room of rooms"
+                        (click)="selectRoom(room.id)"
+                        [class.active]="selectedRoomId === room.id"
+                        >
+                            <h3>{{ room.name }}</h3>
+                            <p>${{ room.pricePerNight }}.00 / night</p>
+                        </div>
+                    </div>
+
+                    <!-- TOTAL -->
+                    <div class="total" *ngIf="total > 0">
+                        <h3>Total: ${{ total }}.00</h3>
+                    </div>
+
+                    <!-- CONFIRM -->               
+                    <button 
+                        class="btn-primary" 
+                        (click)="confirmBooking()"
+                        [disabled]="!selectedRoomId"
+                    >
+                        Confirm Booking
+                    </button>
                 </div>
+                <ng-template #noBooking>
+                    <p class="message">No booking found.</p>
+                </ng-template>
             </div>
         </div>
     </section>

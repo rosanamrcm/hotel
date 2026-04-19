@@ -1,0 +1,228 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.my-bookings-hero {
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-inline: clamp(16px, 6vw, 160px);
+  padding-block: clamp(20px, 5vh, 40px);
+
+  background-image: url('/images/sky.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-sizing: border-box;
+}
+
+.my-bookings-title {
+  margin-top: clamp(110px, 20vh, 240px);
+  transform: translateY(-60px); /* 👈 sobe o bloco */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(8px, 2vw, 20px);
+  text-align: center;
+}
+
+.my-bookings-title h1 {
+  color: #f28e13;
+  font-weight: 700;
+}
+
+.no-bookings {
+  width: 100%;
+  min-height: 40vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 700;
+  color: #f28e13;
+
+  text-align: center;
+}
+
+/* SKELETON LIST */
+.skeleton-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* CARD */
+.skeleton-card {
+  height: 140px;
+  border-radius: 8px;
+
+  background: linear-gradient(
+    90deg,
+    #eee 25%,
+    #ddd 37%,
+    #eee 63%
+  );
+
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+/* ANIMAÇÃO */
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* GRID DE CARDS */
+.bookings-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  padding: 20px 10px;
+}
+
+/* CARD */
+.booking-card {
+  line-height: 1.4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fff;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* TEXTO */
+.booking-card p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* TOTAL */
+.booking-card strong {
+  color: #0083ca;
+}
+
+/* BOTÃO */
+.booking-card button {
+  margin-top: 12px;
+  align-self: flex-end;
+
+  background: #f28e13;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+
+  padding: 8px 12px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.booking-card button:hover {
+  background: #d97706;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+/* MODAL */
+.modal {
+  background: #fff;
+  padding: 24px;
+  border-radius: 10px;
+  width: 320px;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* BOTÕES */
+.modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-actions .btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* NÃO */
+.btn.cancel {
+  background: #ccc;
+}
+
+/* SIM */
+.btn.confirm {
+  background: #f28e13;
+  color: white;
+}
+
+/* ===== RESPONSIVO ===== */
+
+/* TABLET */
+@media (max-width: 768px) {
+
+  .booking-card {
+    padding: 14px;
+  }
+
+  .booking-card button {
+    width: 100%;
+    align-self: stretch;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+
+  .container {
+    padding: 16px;
+  }
+
+  .booking-card {
+    padding: 12px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .booking-card p {
+    font-size: 13px;
+  }
+
+  .booking-card button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

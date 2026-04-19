@@ -13,12 +13,12 @@
     </div>
     <section class="box-type-price">
         <h5>{{ card.title }}</h5>
-        <h5 class="price">${{ card.price }}</h5>
+        <h5 class="price">${{ card.price }}.00</h5>
     </section>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt leo et
     </p>
-    <span class="booking">
+    <span class="booking" (click)="onBookingClick()">
         <a>Booking</a>
         <i>
             <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">

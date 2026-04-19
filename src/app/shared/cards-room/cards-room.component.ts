@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardRoomComponent } from '../card-room/card-room.component';
 
@@ -11,5 +11,11 @@ import { CardRoomComponent } from '../card-room/card-room.component';
 })
 export class CardsRoomComponent {
   @Input() cardList: any;
+
+  @Output() bookingClick = new EventEmitter<void>();
+
+  onBookingClick() {
+    this.bookingClick.emit();
+  }
 
 }

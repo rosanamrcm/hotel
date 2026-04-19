@@ -11,9 +11,7 @@
   flex-direction: column;
   padding-inline: clamp(16px, 6vw, 160px);
   padding-block: clamp(20px, 5vh, 40px);
-  background-color: white;
   
-
   background-image: url('/images/sky.svg');
   background-size: cover;
   background-position: center;
@@ -99,66 +97,72 @@
   align-items: center;
 }
 
-.booking-card__header h3 {
+.booking-card__header h3, .booking-info {
   color: #0083ca;
   font-size: 20px;
   font-weight: 700;
 }
 
-.price {
-  background: #0083ca;
-  color: #fff;
-  padding: 6px 16px;
-  border-radius: 6px;
-  font-weight: 600;
+.rooms {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
 }
 
-/* TABELA */
-.booking-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #f28e13; /* borda externa */
-}
-
-/* células */
-.booking-table th,
-.booking-table td {
+.room-card {
   padding: 16px;
-  text-align: center;
-  border-right: 1px solid #f28e13; /* linhas verticais */
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #0083ca;
+  font-weight: 300;
 }
 
-/* linha abaixo do header */
-.booking-table th {
-  border-bottom: 1px solid #f28e13;
-  font-weight: 600;
+.room-card:hover {
+  border-color: #f28e13;
 }
 
-/* linha pontilhada entre horários e datas */
-.booking-table tr:nth-child(2) td {
-  border-bottom: 1px dashed #f28e13;
+.room-card.active {
+  border: 1px solid #f28e13;
+  background: #fff5eb;
 }
 
-/* célula Guest */
-.guest-cell {
-  vertical-align: middle;
+.total {
+  margin: 20px 0;
   font-size: 20px;
+  font-weight: bold;
+  color: #f28e13;
   font-weight: 700;
 }
 
-/* FOOTER */
-.booking-card__footer {
+/* BUTTOM */
+
+.booking-actions {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  gap: 16px; /* controla o espaço automaticamente */
 }
 
-.booking-card__footer button {
-  background: #f28e13;
-  border: none;
-  padding: 10px 20px;
-  color: #fff;
+.btn-primary {
+  min-height: 48px;
+  width: fit-content; /* 👈 deixa no tamanho do conteúdo */
+  padding-inline: 24px;
   border-radius: 6px;
+  border: none;
+  background: #f47920;
+  color: #fff;
   cursor: pointer;
+}
+
+.btn-primary:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.message {
+  color: #f28e13;
+  font-weight: 700;
 }
 
 /* RESPONSIVO */
@@ -223,60 +227,26 @@
   font-weight: 700;
 }
 
-.price {
-  background: #0083ca;
-  color: #fff;
-  padding: 6px 16px;
-  border-radius: 6px;
-  font-weight: 600;
+/* ====== RESPONSIVO ====== */
+
+@media (max-width: 768px) {
+  .booking-card {
+    flex-direction: column;
+  }
+
+  .booking-card__image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .rooms {
+  flex-direction: column;
+  }
+
+  .booking-actions button {
+    width: 100%;
+  }
 }
 
-/* TABELA */
-.booking-table {
-  border: 1px solid #f28e13;
-}
 
-.table-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
 
-.table-row span {
-  padding: 12px;
-  text-align: center;
-  border-right: 1px dashed #f28e13;
-  border-bottom: 1px dashed #f28e13;
-  font-size: 14px;
-}
-
-.table-row span:last-child {
-  border-right: none;
-}
-
-.table-row:last-child span {
-  border-bottom: none;
-}
-
-.table-row.header span {
-  font-weight: 600;
-}
-
-.guest {
-  font-weight: 700;
-  font-size: 16px;
-}
-
-/* FOOTER */
-.booking-card__footer {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.booking-card__footer button {
-  background: #f28e13;
-  border: none;
-  padding: 10px 20px;
-  color: #fff;
-  border-radius: 6px;
-  cursor: pointer;
-}

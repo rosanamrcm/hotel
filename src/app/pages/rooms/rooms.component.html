@@ -17,7 +17,7 @@
       <img src="/icons/grid.svg" alt="Grid">
       <img src="/icons/list.svg" alt="List">   
     </section>
-    <app-cards-room [cardList]="cardList"></app-cards-room>
+    <app-cards-room [cardList]="cardList" (bookingClick)="goToHome()"></app-cards-room>
   </div>
   
    <app-button-points></app-button-points>

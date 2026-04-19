@@ -1,0 +1,66 @@
+<div class="overlay" *ngIf="isOpen">
+  <div class="modal">
+
+    <button class="close" (click)="close()">×</button>
+
+    <h2>{{ isLogin ? 'Login' : 'Create Account' }}</h2>
+
+    <form (ngSubmit)="submit()">
+
+  <!-- NAME -->
+  <input
+    *ngIf="!isLogin"
+    type="text"
+    placeholder="Name"
+    [(ngModel)]="name"
+    name="name"
+    (input)="clearError('name'); clearFirebaseError()"
+    [class.error]="errors.name"
+  >
+  <span class="error-text" *ngIf="errors.name">{{ errors.name }}</span>
+
+    <!-- EMAIL -->
+    <input
+        type="email"
+        placeholder="Email"
+        [(ngModel)]="email"
+        name="email"
+        (input)="clearError('email'); clearFirebaseError()"
+        [class.error]="errors.email"
+    >
+    <span class="error-text" *ngIf="errors.email">{{ errors.email }}</span>
+
+    <!-- PASSWORD -->
+    <input
+        type="password"
+        placeholder="Password"
+        [(ngModel)]="password"
+        name="password"
+        (input)="clearError('password'); clearFirebaseError()"
+        [class.error]="errors.password"
+    >
+    <span class="error-text" *ngIf="errors.password">{{ errors.password }}</span>
+
+    <!-- ERRO GERAL -->
+    <span class="error-text" *ngIf="firebaseError">
+        {{ firebaseError }}
+    </span>
+
+    <button 
+      class="actions"
+      [disabled]="isLoading"
+    >
+      <span *ngIf="!isLoading">
+        {{ isLogin ? 'Login' : 'Register' }}
+      </span>
+
+      <span *ngIf="isLoading" class="spinner"></span>
+    </button>
+
+    </form>
+    <p class="toggle" (click)="toggleMode()">
+      {{ isLogin ? 'Create account' : 'Already have an account? Login' }}
+    </p>
+
+  </div>
+</div>
