@@ -411,27 +411,38 @@ button:disabled {
 
 @media (max-width: 768px) {
   .search {
-    position: static;
-    transform: none;
-    margin-top: 32px;
+    position: static; /* remove absolute */
+    transform: none;  /* remove translate */
+    left: auto;
+    bottom: auto;
 
-    grid-template-columns: 1fr;
+    margin: 20px auto 0 auto; /* centraliza */
+    width: 90%; /* respiro lateral */
+    
+    flex-direction: column; /* empilha campos */
+    align-items: stretch;
   }
 
   .btn-primary {
     width: 100%;
   }
-
 }
 
 @media (max-width: 480px) {
+
   .search {
-    padding: 12px;
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .field {
+    width: 100%;
   }
 
   .btn-primary {
     width: 100%;
   }
+
 }
 
 
