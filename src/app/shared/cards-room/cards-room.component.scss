@@ -9,9 +9,25 @@ app-card-room {
 
 .rooms-container {
   display: grid;
-  grid-auto-rows: minmax(auto, auto);
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: clamp(16px, 3vw, 30px);
-  justify-items: stretch; // 👈 centraliza os cards
   padding: 2rem 10vw 0 10vw;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .rooms-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .rooms-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1201px) {
+  .rooms-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
